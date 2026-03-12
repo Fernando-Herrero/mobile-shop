@@ -7,7 +7,7 @@ const headers = {
 export async function getProducts(search?: string) {
     const params = new URLSearchParams();
     if (search) params.append("search", search);
-    //podria poner un limit para los productos en el caso de que fuesen muchos
+    params.append("limit", "20");
 
     const response = await fetch(`${API_URL}/products?${params}`, { headers });
     if (!response.ok) throw new Error("Error fetching products");
