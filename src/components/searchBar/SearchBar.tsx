@@ -1,23 +1,24 @@
-"use client";
+interface SearchBarProps {
+    search: string;
+    setSearch: (value: string) => void;
+    results: number;
+}
 
-import { useState } from "react";
-
-export default function SearchBar() {
-    const [value, setValue] = useState("");
-
-    const handleSearch = (value: string) => {
-        setValue(value);
-    };
+export default function SearchBar({
+    search,
+    setSearch,
+    results,
+}: SearchBarProps) {
     return (
-        <label>
+        <div>
             <input
                 type="text"
-                id="search"
-                name="search"
-                value={value}
+                value={search}
                 placeholder="Search for a smartphone..."
-                onChange={() => handleSearch}
+                onChange={(event) => setSearch(event.target.value)}
             />
-        </label>
+
+            <span>{results} RESULTS</span>
+        </div>
     );
 }

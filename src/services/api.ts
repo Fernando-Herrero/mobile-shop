@@ -8,7 +8,7 @@ const headers = {
 export async function getProducts(search?: string) {
     const params = new URLSearchParams();
     if (search) params.append("search", search);
-    params.append("limit", "20");
+    params.append("limit", "21");
 
     const response = await fetch(`${API_URL}/products?${params}`, { headers });
     if (!response.ok) throw new Error("Error fetching products");
