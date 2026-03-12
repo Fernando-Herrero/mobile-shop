@@ -8,7 +8,6 @@ const headers = {
 export async function getProducts(search?: string) {
     const params = new URLSearchParams();
     if (search) params.append("search", search);
-    params.append("limit", "20");
 
     const response = await fetch(`${API_URL}/products?${params}`, { headers });
     if (!response.ok) throw new Error("Error fetching products");
@@ -25,7 +24,7 @@ export async function getProducts(search?: string) {
         },
         [] as typeof data,
     );
-    return uniquePhoneList;
+    return uniquePhoneList.slice(0, 20);
 }
 
 export async function getProductById(id: string) {
