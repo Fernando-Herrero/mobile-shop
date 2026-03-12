@@ -7,9 +7,13 @@ interface PhoneCardProps {
 }
 
 export default function PhoneCard({ phone }: PhoneCardProps) {
+    const isXiaomi = phone.brand.toLowerCase() === "xiaomi";
     return (
         <article className="phone-card">
-            <div className="phone-card-image-container">
+            <div
+                className={`phone-card-image-container ${isXiaomi ? "reduce-image" : ""}`}
+            >
+                {" "}
                 <Image
                     src={phone.imageUrl}
                     alt={phone.name}

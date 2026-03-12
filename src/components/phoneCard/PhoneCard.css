@@ -46,8 +46,15 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    box-sizing: border-box;
+}
+
+.phone-card-image-container.reduce-image .phone-image {
+    padding: 45px;
 }
 
 .phone-image {
     object-fit: contain;
+    padding: 10px;
+    box-sizing: border-box;
 }
