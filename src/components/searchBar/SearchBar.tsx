@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter, useSearchParams } from "next/navigation";
 import "./SearchBar.css";
 import { useEffect, useState } from "react";
@@ -26,7 +28,8 @@ export default function SearchBar({ results }: SearchBarProps) {
         }, 400);
 
         return () => clearTimeout(timer);
-    }, [inputValue, router, searchParams]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [inputValue, router]);
 
     const handleClear = () => {
         setInputValue("");

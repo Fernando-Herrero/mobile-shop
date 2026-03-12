@@ -1,6 +1,5 @@
 import { getProducts } from "@/services/api";
 import { ProductList } from "@/types/products.types";
-import "./page.css";
 import PhoneGrid from "@/components/phoneGrid/PhoneGrid";
 
 interface HomeProps {
@@ -8,8 +7,7 @@ interface HomeProps {
 }
 
 export default async function Home({ searchParams }: HomeProps) {
-    const { search } = await searchParams;
-    const query = search || "";
+    const query = (await searchParams).search || "";
     const phones: ProductList[] = await getProducts(query);
     return (
         <main className="home">
