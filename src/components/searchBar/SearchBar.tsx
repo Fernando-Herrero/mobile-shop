@@ -1,16 +1,27 @@
+import { useRouter, useSearchParams } from "next/navigation";
 import "./SearchBar.css";
 interface SearchBarProps {
-    search: string;
-    setSearch: (value: string) => void;
     results: number;
 }
 
-export default function SearchBar({
-    search,
-    setSearch,
-    results,
-}: SearchBarProps) {
-    const handleClear = () => setSearch("");
+export default function SearchBar({ results }: SearchBarProps) {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const currentSearch = searchParams.get("search") ?? "";
+
+    const handleSearch = (search: string) => {
+        const params = new URLSearchParams(searchParams);
+        if (search) {
+            params.set("search", search);
+        } else {
+            params.delete("search");
+        }
+        router.push(`?${params.toString()}`);
+    };
+
+    const handleClear = () => {
+        router.push("/");
+    };
 
     return (
         <div className="input-container">
@@ -18,12 +29,12 @@ export default function SearchBar({
                 <input
                     id="search"
                     type="text"
-                    value={search}
+                    defaultValue={currentSearch}
                     placeholder="Search for a smartphone..."
-                    onChange={(event) => setSearch(event.target.value)}
+                    onChange={(event) => handleSearch(event.target.value)}
                     className="input-search"
                 />
-                {search && (
+                {currentSearch && (
                     <button
                         className="clear-btn"
                         onClick={handleClear}

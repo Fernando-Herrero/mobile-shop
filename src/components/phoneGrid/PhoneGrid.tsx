@@ -3,30 +3,17 @@
 import PhoneCard from "@/components/phoneCard/PhoneCard";
 import SearchBar from "@/components/searchBar/SearchBar";
 import { ProductList } from "@/types/products.types";
-import { useState } from "react";
-
 interface PhoneGridProps {
     phones: ProductList[];
+    resultsCount: number;
 }
 
-export default function PhoneGrid({ phones }: PhoneGridProps) {
-    const [search, setSearch] = useState("");
-
-    const filteredPhones = phones.filter(
-        (phone) =>
-            phone.name.toLowerCase().includes(search.toLowerCase()) ||
-            phone.brand.toLowerCase().includes(search.toLowerCase()),
-    );
-
+export default function PhoneGrid({ phones, resultsCount }: PhoneGridProps) {
     return (
         <>
-            <SearchBar
-                search={search}
-                setSearch={setSearch}
-                results={filteredPhones.length}
-            />
+            <SearchBar results={resultsCount} />
             <div className="phones-grid">
-                {filteredPhones.map((phone) => (
+                {phones.map((phone) => (
                     <PhoneCard key={phone.id} phone={phone} />
                 ))}
             </div>
