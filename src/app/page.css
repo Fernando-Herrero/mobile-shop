@@ -1,0 +1,12 @@
+.home {
+    padding: 16px;
+    margin: auto;
+    width: 100%;
+}
+
+.phones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    border-bottom: 0.5px solid black;
+}

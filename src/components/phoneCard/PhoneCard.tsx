@@ -9,19 +9,28 @@ interface PhoneCardProps {
 export default function PhoneCard({ phone }: PhoneCardProps) {
     return (
         <article className="phone-card">
-            <Image
-                src={phone.imageUrl}
-                alt={phone.name}
-                width={200}
-                height={200}
-            />
+            <div className="phone-card-image-container">
+                <Image
+                    src={phone.imageUrl}
+                    alt={phone.name}
+                    fill
+                    className="phone-image"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+            </div>
             <div className="phone-card-info">
-                <div>
+                <div className="phone-card-title">
                     {" "}
-                    <span className="phone-card-brand">{phone.brand}</span>
-                    <span className="phone-card-name">{phone.name}</span>
+                    <span className="phone-card-brand text-info">
+                        {phone.brand}
+                    </span>
+                    <span className="phone-card-name text-info">
+                        {phone.name}
+                    </span>
                 </div>
-                <span className="phone-card-price">{phone.basePrice}</span>
+                <span className="phone-card-price text-info">
+                    {phone.basePrice} EUR
+                </span>
             </div>
         </article>
     );

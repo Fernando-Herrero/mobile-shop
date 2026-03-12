@@ -1,6 +1,7 @@
 import PhoneCard from "@/components/phoneCard/PhoneCard";
 import { getProducts } from "@/services/api";
 import { ProductList } from "@/types/products.types";
+import "./page.css";
 
 export default async function Home() {
     const phones: ProductList[] = await getProducts();
