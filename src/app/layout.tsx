@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import Navbar from "@/components/navbar/Navbar";
 
 export const metadata: Metadata = {
     title: "Mobile Shop",
@@ -13,8 +14,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body>{children}</body>
+        <html lang="es">
+            <body>
+                <Navbar />
+                {children}
+            </body>
         </html>
     );
 }
