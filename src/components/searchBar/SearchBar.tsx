@@ -1,5 +1,6 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import "./SearchBar.css";
+import { useEffect, useState } from "react";
 interface SearchBarProps {
     results: number;
 }
@@ -7,19 +8,28 @@ interface SearchBarProps {
 export default function SearchBar({ results }: SearchBarProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const currentSearch = searchParams.get("search") ?? "";
+    const [inputValue, setInputValue] = useState(
+        searchParams.get("search") ?? "",
+    );
 
-    const handleSearch = (search: string) => {
-        const params = new URLSearchParams(searchParams);
-        if (search) {
-            params.set("search", search);
-        } else {
-            params.delete("search");
-        }
-        router.push(`?${params.toString()}`);
-    };
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const params = new URLSearchParams(searchParams);
+
+            if (inputValue) {
+                params.set("search", inputValue);
+            } else {
+                params.delete("search");
+            }
+
+            router.push(`?${params}`);
+        }, 400);
+
+        return () => clearTimeout(timer);
+    }, [inputValue, router, searchParams]);
 
     const handleClear = () => {
+        setInputValue("");
         router.push("/");
     };
 
@@ -29,12 +39,12 @@ export default function SearchBar({ results }: SearchBarProps) {
                 <input
                     id="search"
                     type="text"
-                    defaultValue={currentSearch}
+                    value={inputValue}
                     placeholder="Search for a smartphone..."
-                    onChange={(event) => handleSearch(event.target.value)}
+                    onChange={(event) => setInputValue(event.target.value)}
                     className="input-search"
                 />
-                {currentSearch && (
+                {inputValue && (
                     <button
                         className="clear-btn"
                         onClick={handleClear}
