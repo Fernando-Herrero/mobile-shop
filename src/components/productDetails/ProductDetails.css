@@ -1,8 +1,19 @@
-.product-details-img-wrapper {
+.product-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.product-details-img {
     position: relative;
-    width: 100%;
+    width: 75%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    margin-right: auto;
+}
+
+.product-details-img.reduce-image {
+    width: 60%;
 }
 
 .product-image {
@@ -29,4 +40,89 @@
     100% {
         opacity: 1;
     }
+}
+
+.product-details-phone-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.product-details-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-storage-color {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.product-details-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.storage-options {
+    display: flex;
+}
+
+.storage-option-btn {
+    border: 1px solid #ccc;
+    background: transparent;
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 100px;
+}
+
+.storage-option-btn.active {
+    border-color: black;
+}
+
+.color-options-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.color-options {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.color-option-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+    outline: 1px solid #ccc;
+    outline-offset: 1px;
+}
+
+.color-option-btn.active {
+    outline: 1.5px solid black;
+    outline-offset: 1.5px;
+    transform: scale(0.9);
+}
+
+.selected-color-name {
+    margin-top: 8px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.add-to-cart-btn {
+    background-color: black;
+    color: white;
+}
+
+.disabled-btn {
+    border: none;
+    background-color: #f3f2f2;
 }
