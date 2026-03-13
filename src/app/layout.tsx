@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
     title: "Mobile Shop",
@@ -16,8 +17,10 @@ export default function RootLayout({
     return (
         <html lang="es">
             <body suppressHydrationWarning={true}>
-                <Navbar />
-                {children}
+                <CartProvider>
+                    <Navbar />
+                    {children}
+                </CartProvider>
             </body>
         </html>
     );

@@ -10,7 +10,7 @@ export default async function Home({ searchParams }: HomeProps) {
     const query = (await searchParams).search || "";
     const phones: ProductList[] = await getProducts(query);
     return (
-        <main className="home">
+        <main className="shop-container">
             <PhoneGrid phones={phones} resultsCount={phones.length} />
         </main>
     );

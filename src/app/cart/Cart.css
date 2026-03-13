@@ -1,0 +1,10 @@
+.cart-section {
+    justify-content: space-between;
+}
+
+.continue-shopping-btn {
+    width: 100%;
+    background-color: inherit;
+    border: 0.5px solid #1b1a18;
+    padding: 16px;
+}
