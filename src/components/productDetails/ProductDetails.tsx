@@ -19,7 +19,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     const [selectedStorage, setSelectedStorage] =
         useState<StorageOption | null>(null);
     const displayPrice = selectedStorage?.price || product.basePrice;
-    const displayImage = selectedColor?.imageUrl || product.imageUrl;
+    const displayImage =
+        selectedColor?.imageUrl || product.colorOptions[0]?.imageUrl;
     console.log(displayImage);
     return (
         <section className="product-details-container">
