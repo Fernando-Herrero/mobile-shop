@@ -12,6 +12,7 @@ export default async function ProductDetailPage({
 }: ProductDetailPageProps) {
     const { id } = await params;
     const product = await getProductById(id);
+    console.log(product);
 
     return (
         <main className="product-detail-container">
