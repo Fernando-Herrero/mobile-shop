@@ -4,6 +4,10 @@
     gap: 80px;
 }
 
+.product-details-phone {
+    padding: 0 16px;
+}
+
 .product-details-img {
     position: relative;
     width: 75%;
@@ -136,6 +140,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding: 0 16px;
 }
 
 .specs-container {
@@ -159,4 +164,53 @@
 .spec-container span:nth-child(2) {
     flex: 1;
     text-transform: none;
+}
+
+.similar-items-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 0 40px 16px;
+}
+
+.similar-scroll-container {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    border: 0.5px solid black;
+}
+
+.similar-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.similar-card-wrapper {
+    flex: 0 0 calc(100% - 40px);
+    scroll-snap-align: start;
+}
+
+.custom-scrollbar-bg {
+    width: 100%;
+    height: 1px;
+    background: #e5e5e5;
+    margin-top: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.custom-scrollbar-thumb {
+    width: 30%;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    top: -0.5px;
+    cursor: grab;
+    touch-action: none;
+}
+
+.custom-scrollbar-thumb:active {
+    cursor: grabbing;
 }

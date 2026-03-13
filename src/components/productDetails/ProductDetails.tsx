@@ -6,9 +6,10 @@ import {
     StorageOption,
 } from "@/types/products.types";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./ProductDetails.css";
 import { useCartContext } from "@/context/CartContext";
+import PhoneCard from "@/components/phoneCard/PhoneCard";
 
 interface ProductDetailsProps {
     product: ProductDetail;
@@ -38,6 +39,29 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             });
         }
     };
+
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const thumbRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+        const thumb = thumbRef.current;
+
+        if (!scrollContainer || !thumb) return;
+
+        const handleScroll = () => {
+            const scrollPercentage =
+                (scrollContainer.scrollLeft /
+                    (scrollContainer.scrollWidth -
+                        scrollContainer.clientWidth)) *
+                100;
+            thumb.style.left = `${scrollPercentage * 0.7}%`;
+        };
+
+        scrollContainer.addEventListener("scroll", handleScroll);
+        return () =>
+            scrollContainer.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <section className="product-details-container">
@@ -160,7 +184,35 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     ))}
                 </div>
             </div>
-            <div className="product-similar-items"></div>
+            <div className="similar-items-section">
+                <h2 className="shop-text fs-20 similar-title">SIMILAR ITEMS</h2>
+
+                <div className="similar-scroll-container" ref={scrollRef}>
+                    {product.similarProducts.map((similar, index) => (
+                        <div
+                            key={similar.id}
+                            className="similar-card-wrapper"
+                            style={{
+                                borderRight:
+                                    index === product.similarProducts.length - 1
+                                        ? "none"
+                                        : "0.5px solid #000",
+                            }}
+                        >
+                            <PhoneCard phone={similar} />
+                        </div>
+                    ))}
+                </div>
+
+                <div className="custom-scrollbar-container">
+                    <div className="custom-scrollbar-bg">
+                        <div
+                            className="custom-scrollbar-thumb"
+                            ref={thumbRef}
+                        ></div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

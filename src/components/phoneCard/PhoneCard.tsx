@@ -8,13 +8,15 @@ interface PhoneCardProps {
 }
 
 export default function PhoneCard({ phone }: PhoneCardProps) {
-    const isXiaomi = phone.brand.toLowerCase() === "xiaomi";
+    const hasToReduce =
+        phone.brand.toLowerCase() === "xiaomi" ||
+        phone.brand.toLowerCase() === "realme";
 
     return (
         <Link href={`/phone/${phone.id}`} className="phone-card">
             <article className="phone-card-article">
                 <div
-                    className={`phone-card-image-container ${isXiaomi ? "reduce-image" : ""}`}
+                    className={`phone-card-image-container ${hasToReduce ? "reduce-image" : ""}`}
                 >
                     {" "}
                     <Image
