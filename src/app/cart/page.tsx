@@ -6,15 +6,9 @@ import "./Cart.css";
 export default function Cart() {
     const { totalItems } = useCart();
     return (
-        <section className="cart-section">
-            <span className="cart-span">cart({totalItems})</span>
+        <section className="shop-container main-container cart-section">
+            <span className="shop-text fs-20">cart({totalItems})</span>
             {totalItems > 0 ? (
-                <div>
-                    <button className="continue-shopping-btn">
-                        Continue shopping
-                    </button>
-                </div>
-            ) : (
                 <div>
                     {" "}
                     <div className="product-cart-container"></div>
@@ -28,6 +22,12 @@ export default function Cart() {
                             <button className="pay-btn"></button>
                         </div>
                     </div>
+                </div>
+            ) : (
+                <div>
+                    <button className="shop-text fs-12 continue-shopping-btn">
+                        Continue shopping
+                    </button>
                 </div>
             )}
         </section>

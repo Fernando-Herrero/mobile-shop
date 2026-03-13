@@ -11,7 +11,7 @@ interface PhoneGridProps {
 
 export default function PhoneGrid({ phones, resultsCount }: PhoneGridProps) {
     return (
-        <>
+        <section className="main-container">
             <SearchBar results={resultsCount} />
             {phones.length > 0 ? (
                 <div className="phone-grid">
@@ -22,6 +22,6 @@ export default function PhoneGrid({ phones, resultsCount }: PhoneGridProps) {
             ) : (
                 <div className="no-results"></div>
             )}
-        </>
+        </section>
     );
 }
