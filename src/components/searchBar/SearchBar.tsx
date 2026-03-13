@@ -45,11 +45,11 @@ export default function SearchBar({ results }: SearchBarProps) {
                     value={inputValue}
                     placeholder="Search for a smartphone..."
                     onChange={(event) => setInputValue(event.target.value)}
-                    className="input-search"
+                    className="input-search shop-text fs-16"
                 />
                 {inputValue && (
                     <button
-                        className="clear-btn"
+                        className="clear-btn fs-14"
                         onClick={handleClear}
                         aria-label="Clear search"
                     >
@@ -62,7 +62,7 @@ export default function SearchBar({ results }: SearchBarProps) {
                 )}
             </div>
 
-            <span className="search-results">{results} RESULTS</span>
+            <span className="shop-text fs-12">{results} RESULTS</span>
         </div>
     );
 }

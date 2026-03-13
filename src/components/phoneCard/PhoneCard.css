@@ -21,23 +21,8 @@
     gap: 4px;
 }
 
-.text-info {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-transform: uppercase;
-}
-
 .phone-card-brand {
-    font-size: 10px;
     color: #79736d;
-}
-
-.phone-card-name,
-.phone-card-price {
-    font-size: 12px;
 }
 
 .phone-card-image-container {

@@ -25,16 +25,12 @@ export default function PhoneCard({ phone }: PhoneCardProps) {
             <div className="phone-card-info">
                 <div className="phone-card-title">
                     {" "}
-                    <span className="phone-card-brand text-info">
+                    <span className="shop-text fs-10 phone-card-brand">
                         {phone.brand}
                     </span>
-                    <span className="phone-card-name text-info">
-                        {phone.name}
-                    </span>
+                    <span className="shop-text fs-12">{phone.name}</span>
                 </div>
-                <span className="phone-card-price text-info">
-                    {phone.basePrice} EUR
-                </span>
+                <span className="shop-text fs-12">{phone.basePrice} EUR</span>
             </div>
         </article>
     );
