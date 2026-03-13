@@ -137,7 +137,29 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     </button>
                 </div>
             </div>
-            <div className="product-details-specs"></div>
+            <div className="product-details-specs">
+                <h2 className="shop-text fs-20">specifications</h2>
+                <div className="specs-container">
+                    <div className="spec-container">
+                        <span className="shop-text fs-12">BRAND</span>
+                        <span className="shop-text fs-12">{product.brand}</span>
+                    </div>
+
+                    <div className="spec-container">
+                        <span className="shop-text fs-12">NAME</span>
+                        <span className="shop-text fs-12">{product.name}</span>
+                    </div>
+
+                    {Object.entries(product.specs).map(([key, value]) => (
+                        <div key={key} className="spec-container">
+                            <span className="shop-text fs-12">{key}</span>
+                            <span className="shop-text fs-12 second-spec">
+                                {value}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+            </div>
             <div className="product-similar-items"></div>
         </section>
     );
