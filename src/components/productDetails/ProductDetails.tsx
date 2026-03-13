@@ -60,16 +60,18 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 </div>
 
                 <div className="product-details-phone-info">
-                    <div className="product-details-info">
+                    <header className="product-details-info">
                         <h1 className="shop-text fs-20">{product.name}</h1>
-                        <p className="shop-text fs-14">{displayPrice}eur</p>
-                    </div>
+                        <data className="shop-text fs-14" value={displayPrice}>
+                            {displayPrice}eur
+                        </data>
+                    </header>
 
                     <div className="product-storage-color">
                         <div className="product-details-selector">
-                            <p className="shop-text fs-12">
-                                storage¿how much space do you need
-                            </p>
+                            <legend className="shop-text fs-12">
+                                storage¿how much space do you need?
+                            </legend>
                             <div className="storage-options">
                                 {product.storageOptions.map((option) => (
                                     <button
@@ -83,6 +85,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                                                 ? "active"
                                                 : ""
                                         }`}
+                                        aria-label={`Storage capacity ${option.capacity}`}
                                     >
                                         {option.capacity}
                                     </button>
@@ -133,6 +136,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                         }
                         disabled={!selectedColor && !selectedStorage}
                         onClick={handleAddToCart}
+                        aria-live="polite"
                     >
                         añadir
                     </button>
@@ -142,21 +146,21 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 <h2 className="shop-text fs-20">specifications</h2>
                 <div className="specs-container">
                     <div className="spec-container">
-                        <span className="shop-text fs-12">BRAND</span>
-                        <span className="shop-text fs-12">{product.brand}</span>
+                        <dt className="shop-text fs-12">BRAND</dt>
+                        <dd className="shop-text fs-12">{product.brand}</dd>
                     </div>
 
                     <div className="spec-container">
-                        <span className="shop-text fs-12">NAME</span>
-                        <span className="shop-text fs-12">{product.name}</span>
+                        <dt className="shop-text fs-12">NAME</dt>
+                        <dd className="shop-text fs-12">{product.name}</dd>
                     </div>
 
                     {Object.entries(product.specs).map(([key, value]) => (
                         <div key={key} className="spec-container">
-                            <span className="shop-text fs-12">{key}</span>
-                            <span className="shop-text fs-12 second-spec">
+                            <dt className="shop-text fs-12">{key}</dt>
+                            <dd className="shop-text fs-12 second-spec">
                                 {value}
-                            </span>
+                            </dd>
                         </div>
                     ))}
                 </div>

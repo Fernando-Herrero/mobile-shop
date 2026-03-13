@@ -46,6 +46,12 @@
     }
 }
 
+.product-details-phone-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 .product-details-info {
     display: flex;
     flex-direction: column;
@@ -128,6 +134,8 @@
 .disabled-btn {
     border: none;
     background-color: #f3f2f2;
+    color: #a1a1a1;
+    cursor: not-allowed;
 }
 
 .product-details-specs {
@@ -151,11 +159,11 @@
     border-top: 0.5px solid black;
 }
 
-.spec-container span:first-child {
+.spec-container dt {
     flex: 1;
 }
 
-.spec-container span:nth-child(2) {
+.spec-container dd {
     flex: 1;
     text-transform: none;
 }
