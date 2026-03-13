@@ -46,12 +46,6 @@
     }
 }
 
-.product-details-phone-info {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
 .product-details-info {
     display: flex;
     flex-direction: column;
@@ -171,6 +165,8 @@
     flex-direction: column;
     gap: 40px;
     padding: 0 0 40px 16px;
+    position: relative;
+    margin-bottom: 80px;
 }
 
 .similar-scroll-container {
@@ -178,39 +174,42 @@
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    scrollbar-width: none;
     scroll-snap-type: x mandatory;
-    border: 0.5px solid black;
+    padding-bottom: 40px;
+}
+
+.similar-scroll-container::after {
+    content: "";
+    flex: 0 0 16px;
+    display: block;
 }
 
 .similar-scroll-container::-webkit-scrollbar {
-    display: none;
+    height: 2px;
+}
+
+.similar-scroll-container::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    margin-right: 16px;
+}
+
+.similar-scroll-container::-webkit-scrollbar-thumb {
+    background: #000;
+    cursor: grab;
+}
+
+.similar-scroll-container::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
 }
 
 .similar-card-wrapper {
     flex: 0 0 calc(100% - 40px);
     scroll-snap-align: start;
+    border-top: 0.5px solid black;
+    border-left: 0.5px solid black;
+    border-bottom: 0.5px solid black;
 }
 
-.custom-scrollbar-bg {
-    width: 100%;
-    height: 1px;
-    background: #e5e5e5;
-    margin-top: 30px;
-    position: relative;
-    cursor: pointer;
-}
-
-.custom-scrollbar-thumb {
-    width: 30%;
-    height: 2px;
-    background: #000;
-    position: absolute;
-    top: -0.5px;
-    cursor: grab;
-    touch-action: none;
-}
-
-.custom-scrollbar-thumb:active {
-    cursor: grabbing;
+.similar-card-wrapper:last-child {
+    border-right: 0.5px solid black;
 }
