@@ -1,14 +1,17 @@
 import Link from "next/link";
 import "./ProductDetailPage.css";
+import { getProductById } from "@/services/api";
+import ProductDetails from "@/components/productDetails/ProductDetails";
 
 interface ProductDetailPageProps {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 }
 
 export default async function ProductDetailPage({
     params,
 }: ProductDetailPageProps) {
-    // const product = await getProductById(params.id);
+    const { id } = await params;
+    const product = await getProductById(id);
 
     return (
         <main className="product-detail-container">
@@ -17,6 +20,7 @@ export default async function ProductDetailPage({
                 <img src="/icons/chevron-left.svg" alt="chevron left icon" />
                 <p className="shop-text fs-12">back</p>
             </Link>
+            <ProductDetails product={product} />
         </main>
     );
 }

@@ -9,6 +9,7 @@ interface PhoneCardProps {
 
 export default function PhoneCard({ phone }: PhoneCardProps) {
     const isXiaomi = phone.brand.toLowerCase() === "xiaomi";
+
     return (
         <Link href={`/phone/${phone.id}`} className="phone-card">
             <article className="phone-card-article">
