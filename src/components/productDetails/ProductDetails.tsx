@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import "./ProductDetails.css";
-import { useCart } from "@/hooks/useCart";
+import { useCartContext } from "@/context/CartContext";
 
 interface ProductDetailsProps {
     product: ProductDetail;
@@ -16,7 +16,7 @@ interface ProductDetailsProps {
 
 export default function ProductDetails({ product }: ProductDetailsProps) {
     const isXiaomi = product.brand.toLowerCase() === "xiaomi";
-    const { addToCart } = useCart();
+    const { addToCart } = useCartContext();
     const [selectedColor, setSelectedColor] = useState<ColorOption | null>(
         null,
     );
@@ -126,11 +126,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
                     <button
                         className={
-                            selectedColor || selectedStorage
+                            selectedColor && selectedStorage
                                 ? "shop-btn shop-text fs-12 add-to-cart-btn"
                                 : "shop-btn shop-text fs-12 disabled-btn"
                         }
-                        disabled={!selectedColor || !selectedStorage}
+                        disabled={!selectedColor && !selectedStorage}
                         onClick={handleAddToCart}
                     >
                         añadir

@@ -120,6 +120,11 @@
 .add-to-cart-btn {
     background-color: black;
     color: white;
+    transition: transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    transform: translateY(-2px);
 }
 
 .disabled-btn {
