@@ -14,7 +14,9 @@ export const useCart = () => {
             return [];
         }
     });
-
+    // Al principio use useEffect para el carrito, pero me saltó el aviso de los "cascading renders".
+    // Problema que ya habia visto al pasar mi proyecto personal a next.
+    // Así que lo he movido al estao inicial pa ra que no de rplemas ni re-renders.
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
