@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import "./Navbar.css";
+import { useCart } from "@/hooks/useCart";
 
 export default function Navbar() {
-    const [cart, setCart] = useState(0);
+    const { totalItems } = useCart();
     return (
         <nav className="navbar">
             <Link href="/">
@@ -24,12 +24,16 @@ export default function Navbar() {
                 className="cart-link-nav"
             >
                 <Image
-                    src="/icons/cart-empty.svg"
+                    src={
+                        totalItems > 0
+                            ? "/icons/cart-fill.svg"
+                            : "/icons/cart-empty.svg"
+                    }
                     alt="Carrito de compras"
                     width={18}
                     height={18}
                 />
-                <span className="cart-number-nav">{cart}</span>
+                <span className="cart-number-nav">{totalItems}</span>
             </Link>
         </nav>
     );
