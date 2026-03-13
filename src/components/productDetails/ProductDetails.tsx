@@ -8,6 +8,7 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import "./ProductDetails.css";
+import { useCart } from "@/hooks/useCart";
 
 interface ProductDetailsProps {
     product: ProductDetail;
@@ -15,6 +16,7 @@ interface ProductDetailsProps {
 
 export default function ProductDetails({ product }: ProductDetailsProps) {
     const isXiaomi = product.brand.toLowerCase() === "xiaomi";
+    const { addToCart } = useCart();
     const [selectedColor, setSelectedColor] = useState<ColorOption | null>(
         null,
     );
@@ -23,6 +25,19 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     const displayPrice = selectedStorage?.price || product.basePrice;
     const displayImage =
         selectedColor?.imageUrl || product.colorOptions[0]?.imageUrl;
+
+    const handleAddToCart = () => {
+        if (selectedColor && selectedStorage) {
+            addToCart({
+                id: `${product.id}-${selectedColor.name}-${selectedStorage.capacity}`,
+                name: product.name,
+                image: selectedColor.imageUrl,
+                price: selectedStorage.price,
+                color: selectedColor.name,
+                storage: selectedStorage.capacity,
+            });
+        }
+    };
 
     return (
         <section className="product-details-container">
@@ -116,6 +131,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                                 : "shop-btn shop-text fs-12 disabled-btn"
                         }
                         disabled={!selectedColor || !selectedStorage}
+                        onClick={handleAddToCart}
                     >
                         añadir
                     </button>
