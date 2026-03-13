@@ -20,7 +20,7 @@ export default function PhoneGrid({ phones, resultsCount }: PhoneGridProps) {
                     ))}
                 </div>
             ) : (
-                <div className="no-results">No smartphones found.</div>
+                <div className="no-results"></div>
             )}
         </>
     );
