@@ -4,8 +4,11 @@
     align-items: center;
     gap: 24px;
     width: 100%;
-    border-top: 0.5px solid black;
     padding: 16px;
+}
+
+.phone-card-article {
+    width: 100%;
 }
 
 .phone-card-info {
@@ -33,8 +36,17 @@
     box-sizing: border-box;
 }
 
-.phone-card-image-container.reduce-image .phone-image {
-    padding: 45px;
+.phone-card-image-container.reduce-image-max .phone-image {
+    padding: 50px;
+}
+.phone-card-image-container.reduce-image-medium .phone-image {
+    padding: 50px;
+}
+.phone-card-image-container.reduce-image-small .phone-image {
+    padding: 20px;
+}
+.phone-card-image-container.augment-image .phone-image {
+    padding: 0px;
 }
 
 .phone-image {
