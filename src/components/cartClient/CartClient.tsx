@@ -12,7 +12,7 @@ export default function CartClient() {
         0,
     );
     return (
-        <div className="shop-container main-container cart-wrapper">
+        <div className="shop-container cart-wrapper">
             <header>
                 <span className="shop-text fs-20 uppercase">
                     cart({totalItems})
@@ -32,23 +32,27 @@ export default function CartClient() {
 
                     <div className="info-cart-container">
                         <div className="price-cart-container">
-                            <p className="fs-14">TOTAL</p>
-                            <span className="total-price-cart">
-                                {totalPrice} EUR
+                            <p className="shop-text fs-14 total-price-text">
+                                total
+                            </p>
+                            <span className="shop-text fs-14 total-price-text">
+                                {totalPrice} eur
                             </span>
                         </div>
                         <div className="btn-cart-container">
-                            <button className="continue-shopping-btn">
-                                CONTINUE SHOPPING
+                            <button className="shop-btn shop-text fs-10 continue-shopping-btn">
+                                continue shopping
                             </button>
-                            <button className="pay-btn">PAY</button>
+                            <button className="shop-btn shop-text fs-10 pay-btn">
+                                pay
+                            </button>
                         </div>
                     </div>
                 </div>
             ) : (
                 <div className="empty-cart-state">
                     <button className="continue-shopping-btn">
-                        Continue shopping
+                        continue shopping
                     </button>
                 </div>
             )}

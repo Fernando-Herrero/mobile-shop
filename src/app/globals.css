@@ -64,3 +64,13 @@ a {
     border: 0.5px solid #1b1a18;
     padding: 16px;
 }
+
+.cart-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-cart-container {
+    display: flex;
+    gap: 12px;
+}

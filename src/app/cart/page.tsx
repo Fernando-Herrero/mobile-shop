@@ -2,7 +2,7 @@ import CartClient from "@/components/cartClient/CartClient";
 
 export default function Cart() {
     return (
-        <main>
+        <main className="cart-main">
             <CartClient />
         </main>
     );
