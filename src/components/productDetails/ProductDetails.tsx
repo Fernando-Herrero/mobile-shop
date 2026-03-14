@@ -10,13 +10,13 @@ import { useState } from "react";
 import "./ProductDetails.css";
 import { useCartContext } from "@/context/CartContext";
 import PhoneCard from "@/components/phoneCard/PhoneCard";
+import { getImageScaleClass } from "@/utils/product.helpers";
 
 interface ProductDetailsProps {
     product: ProductDetail;
 }
 
 export default function ProductDetails({ product }: ProductDetailsProps) {
-    const isXiaomi = product.brand.toLowerCase() === "xiaomi";
     const { addToCart } = useCartContext();
     const [selectedColor, setSelectedColor] = useState<ColorOption | null>(
         null,
@@ -40,12 +40,12 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         }
     };
 
+    const scaleClass = getImageScaleClass(product.brand, product.name);
+
     return (
         <section className="product-details-container">
             <div className="product-details-phone">
-                <div
-                    className={`product-details-img ${isXiaomi ? "reduce-image" : ""} `}
-                >
+                <div className={`product-details-img ${scaleClass} `}>
                     {displayImage ? (
                         <Image
                             src={displayImage}

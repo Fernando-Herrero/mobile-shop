@@ -19,12 +19,29 @@
     margin-right: auto;
 }
 
-.product-details-img.reduce-image {
+.product-details-img.reduce-image-max {
     width: 65%;
 }
 
-.product-details-img.reduce-image img {
+.product-details-img.reduce-image-max img {
     padding: 20px 20px 20px 50px;
+}
+
+.product-details-img.reduce-image-medium {
+    width: 70%;
+}
+
+.product-details-img.reduce-image-small {
+    width: 75%;
+}
+
+.product-details-img.reduce-image-small img {
+    padding-left: 20px;
+}
+
+.product-details-img.augment-image {
+    width: 85%;
+    margin: -16px;
 }
 
 .product-image {

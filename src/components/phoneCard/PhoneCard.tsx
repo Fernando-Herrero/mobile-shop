@@ -2,6 +2,7 @@ import { ProductList } from "@/types/products.types";
 import "./PhoneCard.css";
 import Image from "next/image";
 import Link from "next/link";
+import { getImageScaleClass } from "@/utils/product.helpers";
 
 interface PhoneCardProps {
     phone: ProductList;
@@ -9,9 +10,7 @@ interface PhoneCardProps {
 }
 
 export default function PhoneCard({ phone, variant = "grid" }: PhoneCardProps) {
-    const hasToReduce =
-        phone.brand.toLowerCase() === "xiaomi" ||
-        phone.brand.toLowerCase() === "realme";
+    const scaleClass = getImageScaleClass(phone.brand, phone.name);
 
     return (
         <Link
@@ -19,9 +18,7 @@ export default function PhoneCard({ phone, variant = "grid" }: PhoneCardProps) {
             className={`phone-card ${variant === "grid" ? "grid-border" : ""} `}
         >
             <article className="phone-card-article">
-                <div
-                    className={`phone-card-image-container ${hasToReduce ? "reduce-image" : ""}`}
-                >
+                <div className={`phone-card-image-container ${scaleClass}`}>
                     {" "}
                     <Image
                         src={phone.imageUrl}
