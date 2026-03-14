@@ -1,10 +1,11 @@
 "use client";
 
-import { useCart } from "@/hooks/useCart";
 import "./Cart.css";
+import { useCartContext } from "@/context/CartContext";
 
 export default function Cart() {
-    const { totalItems } = useCart();
+    const { totalItems } = useCartContext();
+
     return (
         <section className="shop-container main-container cart-section">
             <span className="shop-text fs-20">cart({totalItems})</span>

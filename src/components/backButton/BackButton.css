@@ -1,0 +1,10 @@
+.product-detail-back {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
