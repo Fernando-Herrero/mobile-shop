@@ -146,12 +146,12 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 <h2 className="shop-text fs-20">specifications</h2>
                 <div className="specs-container">
                     <div className="spec-container">
-                        <dt className="shop-text fs-12">BRAND</dt>
+                        <dt className="shop-text fs-12">brand</dt>
                         <dd className="shop-text fs-12">{product.brand}</dd>
                     </div>
 
                     <div className="spec-container">
-                        <dt className="shop-text fs-12">NAME</dt>
+                        <dt className="shop-text fs-12">name</dt>
                         <dd className="shop-text fs-12">{product.name}</dd>
                     </div>
 
@@ -166,12 +166,12 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 </div>
             </div>
             <div className="similar-items-section">
-                <h2 className="shop-text fs-20 similar-title">SIMILAR ITEMS</h2>
+                <h2 className="shop-text fs-20 similar-title">similar items</h2>
 
                 <div className="similar-scroll-container">
                     {product.similarProducts.map((similar) => (
                         <div key={similar.id} className="similar-card-wrapper">
-                            <PhoneCard phone={similar} />
+                            <PhoneCard phone={similar} variant="similar" />
                         </div>
                     ))}
                 </div>

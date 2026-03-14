@@ -5,15 +5,19 @@ import Link from "next/link";
 
 interface PhoneCardProps {
     phone: ProductList;
+    variant?: string;
 }
 
-export default function PhoneCard({ phone }: PhoneCardProps) {
+export default function PhoneCard({ phone, variant = "grid" }: PhoneCardProps) {
     const hasToReduce =
         phone.brand.toLowerCase() === "xiaomi" ||
         phone.brand.toLowerCase() === "realme";
 
     return (
-        <Link href={`/phone/${phone.id}`} className="phone-card">
+        <Link
+            href={`/phone/${phone.id}`}
+            className={`phone-card ${variant === "grid" ? "grid-border" : ""} `}
+        >
             <article className="phone-card-article">
                 <div
                     className={`phone-card-image-container ${hasToReduce ? "reduce-image" : ""}`}

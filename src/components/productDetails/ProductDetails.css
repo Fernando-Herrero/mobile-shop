@@ -6,6 +6,9 @@
 
 .product-details-phone {
     padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .product-details-img {
@@ -17,7 +20,11 @@
 }
 
 .product-details-img.reduce-image {
-    width: 60%;
+    width: 65%;
+}
+
+.product-details-img.reduce-image img {
+    padding: 20px 20px 20px 50px;
 }
 
 .product-image {
