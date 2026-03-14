@@ -1,0 +1,14 @@
+.cart-wrapper {
+    height: 100%;
+}
+
+.cart-main-content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.continue-shopping-btn {
+    background-color: inherit;
+}

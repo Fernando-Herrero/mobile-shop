@@ -1,0 +1,17 @@
+.phone-cart-item {
+    display: flex;
+}
+
+.phone-cart-img-container {
+    position: relative;
+    flex: 1;
+}
+
+.phone-cart-img {
+    width: 100%;
+    position: relative;
+}
+
+.phone-cart-content {
+    flex: 1;
+}
