@@ -3,10 +3,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./Navbar.css";
+<<<<<<< Updated upstream
 import { useCart } from "@/hooks/useCart";
 
 export default function Navbar() {
     const { totalItems } = useCart();
+=======
+import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
+
+const CartCounter = dynamic(() => import("../cartCounter/CartCounter"), {
+    ssr: false,
+    loading: () => (
+        <Image
+            src="/icons/cart-empty.svg"
+            alt="Cargando..."
+            width={18}
+            height={18}
+        />
+    ),
+});
+
+export default function Navbar() {
+    const pathname = usePathname();
+    const isCartPage = pathname === "/cart";
+
+>>>>>>> Stashed changes
     return (
         <nav className="navbar">
             <Link href="/">
@@ -18,6 +40,7 @@ export default function Navbar() {
                 />
             </Link>
 
+<<<<<<< Updated upstream
             <Link
                 href="/cart"
                 aria-label="Carrito de compras"
@@ -35,6 +58,17 @@ export default function Navbar() {
                 />
                 <span className="cart-number-nav">{totalItems}</span>
             </Link>
+=======
+            {!isCartPage && (
+                <Link
+                    href="/cart"
+                    aria-label="Carrito de compras"
+                    className="cart-link-nav"
+                >
+                    <CartCounter />
+                </Link>
+            )}
+>>>>>>> Stashed changes
         </nav>
     );
 }
