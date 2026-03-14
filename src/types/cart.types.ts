@@ -16,4 +16,5 @@ export interface CartItem {
     price: number;
     color: string;
     storage: string;
+    quantity?: number;
 }

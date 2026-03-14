@@ -6,7 +6,11 @@ import PhoneCardCart from "@/components/phoneCardCart/PhoneCardCart";
 
 export default function CartClient() {
     const { totalItems, cart, removeFromCart } = useCartContext();
-    const totalPrice = cart.reduce((acc, phone) => acc + phone.price, 0);
+
+    const totalPrice = cart.reduce(
+        (acc, item) => acc + item.price * (item.quantity || 1),
+        0,
+    );
     return (
         <div className="shop-container main-container cart-wrapper">
             <header>
