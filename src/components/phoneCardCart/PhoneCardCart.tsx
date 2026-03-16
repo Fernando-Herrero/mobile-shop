@@ -36,17 +36,21 @@ export default function PhoneCardCart({ phone, onRemove }: PhoneCardCartProps) {
 
             <div className="phone-cart-content">
                 <header className="phone-cart-header">
-                    <h3 className="shop-text fs-10">{phone.name}</h3>
-                    <div className="phone-cart-specs">
-                        <span className="shop-text fs-10">{phone.storage}</span>
-                        <span className="fs-10 separator">|</span>
-                        <span className="shop-text fs-10">{phone.color}</span>
+                    <div className="phone-cart-header-specs">
+                        <h3 className="shop-text fs-12">{phone.name}</h3>
+                        <div className="phone-cart-specs">
+                            <span className="shop-text fs-12">
+                                {phone.storage}
+                            </span>
+                            <span className="fs-10 separator">|</span>
+                            <span className="shop-text fs-12">
+                                {phone.color}
+                            </span>
+                        </div>
                     </div>
-                </header>
 
-                <div className="phone-cart-footer">
                     <div className="price-stack">
-                        <data className="phone-cart-price shop-text fs-10">
+                        <data className="phone-cart-price shop-text fs-12">
                             {phonePrice} eur
                         </data>
                         {phone.quantity && phone.quantity > 1 && (
@@ -55,11 +59,13 @@ export default function PhoneCardCart({ phone, onRemove }: PhoneCardCartProps) {
                             </span>
                         )}
                     </div>
+                </header>
 
+                <div className="phone-cart-footer">
                     <button
                         onClick={handleRemove}
                         disabled={isRemoving}
-                        className="shop-text fs-10 remove-item-btn"
+                        className="shop-text fs-12 remove-item-btn"
                         aria-label={`Eliminar ${phone.name} del carrito`}
                     >
                         {isRemoving ? "Eliminando..." : "Eliminar"}

@@ -32,29 +32,29 @@ export default function CartClient() {
                     </div>
 
                     <div className="info-cart-container">
+                        <Link href="/" className="continue-shopping-link">
+                            <button className="shop-btn shop-text fs-10 continue-shopping-btn">
+                                continue shopping
+                            </button>
+                        </Link>
+
                         <div className="price-cart-container">
-                            <p className="shop-text fs-14 total-price-text">
+                            <p className="shop-text fs-14 total-price-text uppercase">
                                 total
                             </p>
                             <span className="shop-text fs-14 total-price-text">
                                 {totalPrice} eur
                             </span>
                         </div>
-                        <div className="btn-cart-container">
-                            <Link href="/" className="continue-shopping-link">
-                                <button className="shop-btn shop-text fs-10 continue-shopping-btn">
-                                    continue shopping
-                                </button>
-                            </Link>
-                            <button className="shop-btn shop-text fs-10 pay-btn">
-                                pay
-                            </button>
-                        </div>
+
+                        <button className="shop-btn shop-text fs-10 pay-btn">
+                            pay
+                        </button>
                     </div>
                 </div>
             ) : (
                 <div className="empty-cart-state">
-                    <Link href="/" className="continue-shopping-link">
+                    <Link href="/" className="continue-shopping-link is-empty">
                         <button className="shop-btn shop-text fs-10 continue-shopping-btn">
                             continue shopping
                         </button>
