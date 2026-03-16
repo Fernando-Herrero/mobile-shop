@@ -74,3 +74,21 @@ a {
     display: flex;
     gap: 12px;
 }
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .shop-container {
+        padding: 48px 40px;
+    }
+
+    .main-container {
+        gap: 48px;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 1024px) {
+    .shop-container {
+        padding: 48px 100px;
+    }
+}

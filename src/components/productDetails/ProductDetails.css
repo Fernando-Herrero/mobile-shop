@@ -17,6 +17,7 @@
     aspect-ratio: 1 / 1;
     overflow: hidden;
     margin-right: auto;
+    max-width: 400px;
 }
 
 .product-details-img.reduce-image-max {
@@ -52,7 +53,6 @@
     width: 100%;
     height: 200px;
     background-color: #e5e5e5;
-    border-radius: 6px;
     animation: skeleton-pulse 1.5s ease-in-out infinite;
 }
 
@@ -114,6 +114,7 @@
 .color-options-container {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .color-options {
@@ -140,15 +141,20 @@
 }
 
 .selected-color-name {
-    margin-top: 8px;
+    position: absolute;
+    top: 34px;
+    left: 0;
+    margin-top: 0;
     display: block;
-    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .add-to-cart-btn {
     background-color: black;
     color: white;
     transition: transform 0.2s ease;
+    cursor: pointer;
+    border: none;
 }
 
 .add-to-cart-btn.loading {
@@ -250,4 +256,85 @@
 
 .similar-card-wrapper:last-child {
     border-right: 0.5px solid black;
+}
+
+/*medida solo para que la cuadricula de similar items no se vea muy
+grande ya que me da toc*/
+@media (min-width: 500px) {
+    .similar-card-wrapper {
+        flex: 0 0 calc(100% / 1.7);
+    }
+}
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .product-details-phone {
+        padding: 0 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .product-details-img {
+        /* margin-left: -35px; */
+        flex: 1;
+        margin-left: 0;
+        max-width: 500px;
+    }
+
+    .product-details-phone-info {
+        flex: 1;
+        max-width: 450px;
+    }
+
+    .product-details-specs {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        width: 100%;
+    }
+
+    .similar-items-section {
+        padding-left: calc((100vw - 1200px) / 2 + 40px);
+    }
+
+    .similar-card-wrapper {
+        flex: 0 0 calc(100% / 2.5);
+    }
+
+    .similar-scroll-container::after {
+        flex: 0 0 40px;
+    }
+
+    .similar-scroll-container::-webkit-scrollbar-track {
+        margin-right: 40px;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 1024px) {
+    .product-details-container {
+        gap: 120px;
+    }
+
+    .similar-scroll-container {
+        padding-right: calc((100vw - 1200px) / 2 + 40px);
+    }
+
+    .similar-scroll-container:after {
+        flex: 0 0 0;
+    }
+
+    .similar-card-wrapper {
+        flex: 0 0 calc((1200px - 80px) / 4);
+        scroll-snap-align: start;
+    }
+
+    .similar-scroll-container::-webkit-scrollbar-track {
+        margin-right: calc((100vw - 1200px) / 2 + 40px);
+    }
 }

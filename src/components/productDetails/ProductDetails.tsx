@@ -52,6 +52,21 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
     const scaleClass = getImageScaleClass(product.brand, product.name);
 
+    // Ya que no puedo controlar qué productos similares vienen, si alguno está duplicado lo eliminamos.
+    // Además, filtramos para que el producto que estamos viendo actualmente no aparezca en la lista de similares por si acaso.
+    const uniqueSimilarProducts = product.similarProducts.reduce(
+        (acc, phone) => {
+            const isDuplicate = acc.find((p) => p.id === phone.id);
+            const isCurrentProduct = phone.id === product.id;
+
+            if (!isDuplicate && !isCurrentProduct) {
+                acc.push(phone);
+            }
+            return acc;
+        },
+        [] as typeof product.similarProducts,
+    );
+
     return (
         <section className="product-details-container">
             <div className="product-details-phone">
@@ -63,6 +78,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                             fill
                             className="product-image"
                             priority
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                         />
                     ) : (
                         <div className="image-placeholder" />
@@ -181,7 +197,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 <h2 className="shop-text fs-20 similar-title">similar items</h2>
 
                 <div className="similar-scroll-container">
-                    {product.similarProducts.map((similar) => (
+                    {uniqueSimilarProducts.map((similar) => (
                         <div key={similar.id} className="similar-card-wrapper">
                             <PhoneCard phone={similar} variant="similar" />
                         </div>

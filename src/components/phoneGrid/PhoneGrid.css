@@ -6,6 +6,8 @@
     border-left: 0.5px solid black;
     border-right: 0.5px solid black;
     border-bottom: 0.5px solid black;
+    margin: 0 auto;
+    max-width: 400px;
 }
 
 .grid-border {
@@ -19,4 +21,116 @@
     font-weight: 300;
     font-size: 14px;
     line-height: 100%;
+}
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .phone-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+        border: none;
+    }
+
+    .phone-card.grid-border {
+        border-top: 0.5px solid black;
+        border-left: 0.5px solid black;
+        border-bottom: 0.5px solid black;
+        border-right: none;
+    }
+
+    .phone-card.grid-border:nth-child(2n),
+    .phone-card.grid-border:last-child {
+        border-right: 0.5px solid black;
+    }
+
+    .phone-card.grid-border:nth-child(n + 3) {
+        border-top: none;
+    }
+}
+
+/*TABLET LARGE*/
+@media (min-width: 960px) {
+    .phone-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .phone-card.grid-border:nth-child(n + 3) {
+        border-top: 0.5px solid black;
+    }
+    .phone-card.grid-border:nth-child(2n) {
+        border-right: none;
+    }
+
+    .phone-card.grid-border:nth-child(3n),
+    .phone-card.grid-border:last-child {
+        border-right: 0.5px solid black;
+    }
+
+    .phone-card.grid-border:nth-child(n + 4) {
+        border-top: none;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 1240px) {
+    .phone-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .phone-card.grid-border:nth-child(n + 4) {
+        border-top: 0.5px solid black;
+    }
+    .phone-card.grid-border:nth-child(3n) {
+        border-right: none;
+    }
+
+    .phone-card.grid-border:nth-child(4n),
+    .phone-card.grid-border:last-child {
+        border-right: 0.5px solid black;
+    }
+    .phone-card.grid-border:nth-child(n + 5) {
+        border-top: none;
+    }
+}
+
+/*LARGE DESKTOP*/
+@media (min-width: 1440px) {
+    .phone-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .phone-card.grid-border:nth-child(n + 5) {
+        border-top: 0.5px solid black;
+    }
+    .phone-card.grid-border:nth-child(4n) {
+        border-right: none;
+    }
+
+    .phone-card.grid-border:nth-child(5n),
+    .phone-card.grid-border:last-child {
+        border-right: 0.5px solid black;
+    }
+    .phone-card.grid-border:nth-child(n + 6) {
+        border-top: none;
+    }
+}
+
+/*ULTRA DESKTOP*/
+@media (min-width: 1640px) {
+    .phone-grid {
+        grid-template-columns: repeat(6, 1fr);
+        max-width: 1800px;
+    }
+    .phone-card.grid-border:nth-child(n + 6) {
+        border-top: 0.5px solid black;
+    }
+    .phone-card.grid-border:nth-child(5n) {
+        border-right: none;
+    }
+
+    .phone-card.grid-border:nth-child(6n),
+    .phone-card.grid-border:last-child {
+        border-right: 0.5px solid black;
+    }
+    .phone-card.grid-border:nth-child(n + 7) {
+        border-top: none;
+    }
 }

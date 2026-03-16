@@ -21,14 +21,15 @@
 
 .info-cart-container {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 24px 0;
+    flex-wrap: wrap;
 }
 
 .price-cart-container {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    order: -1;
+    padding-bottom: 24px;
 }
 
 .total-price-text {
@@ -36,18 +37,24 @@
 }
 
 .continue-shopping-link {
-    width: 100%;
+    flex: 1;
+    margin-right: 6px;
+    display: flex;
 }
 
 .continue-shopping-btn {
-    width: 100%;
     background: transparent;
-    color: black;
+    cursor: pointer;
+    display: block;
 }
 
 .pay-btn {
+    flex: 1;
     background: black;
     color: white;
+    border: none;
+    margin-left: 6px;
+    cursor: pointer;
 }
 
 .empty-cart-state {
@@ -55,4 +62,34 @@
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-end;
+}
+
+.continue-shopping-link.is-empty {
+    flex: 0;
+}
+
+@media (min-width: 768px) {
+    .info-cart-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .price-cart-container {
+        width: auto;
+        order: 0;
+        padding-bottom: 0;
+        padding-right: 56px;
+    }
+
+    .continue-shopping-btn {
+        max-width: 200px;
+        font-size: 12px;
+    }
+
+    .pay-btn {
+        max-width: 260px;
+        font-size: 12px;
+    }
 }

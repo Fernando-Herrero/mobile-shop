@@ -7,7 +7,7 @@ export default function CartCounter() {
     const { totalItems } = useCartContext();
 
     return (
-        <>
+        <div className="cart-counter">
             <Image
                 src={
                     totalItems > 0
@@ -18,9 +18,7 @@ export default function CartCounter() {
                 width={18}
                 height={18}
             />
-            {totalItems > 0 && (
-                <span className="cart-number-nav">{totalItems}</span>
-            )}
-        </>
+            <span className="cart-number-nav">{totalItems}</span>
+        </div>
     );
 }

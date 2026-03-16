@@ -1,6 +1,6 @@
 .phone-cart-item {
     display: flex;
-    padding: 16px 0;
+    width: 100%;
     align-items: center;
     border-bottom: 1px solid #f0f0f0;
     transition: all 0.3s ease;
@@ -20,12 +20,11 @@
 
 .phone-cart-img-container {
     position: relative;
-    flex: 1;
-    height: 150px;
+    width: 180px;
+    height: 160px;
     flex-shrink: 0;
-    margin: 0 -30px;
-    max-width: 300px;
     z-index: 1;
+    margin-left: -20px;
 }
 
 .phone-cart-img {
@@ -34,16 +33,20 @@
 }
 
 .phone-cart-content {
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100px;
-    padding: 10px 0;
     max-width: 400px;
 }
 
 .phone-cart-header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.phone-cart-header-specs {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -55,11 +58,11 @@
     gap: 6px;
 }
 
-.phone-cart-footer {
+/* .phone-cart-footer {
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
+} */
 
 .price-stack {
     display: flex;
@@ -94,4 +97,17 @@
     filter: grayscale(1);
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .phone-cart-img-container {
+        width: 250px;
+        height: 230px;
+        margin-left: -40px;
+    }
+
+    .phone-cart-content {
+        height: 140px;
+    }
 }
