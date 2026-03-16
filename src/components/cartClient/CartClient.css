@@ -83,8 +83,12 @@
         order: 0;
         padding-bottom: 0;
         padding-right: 56px;
+        gap: 12px;
     }
 
+    .continue-shopping-link {
+        margin-right: 0;
+    }
     .continue-shopping-btn {
         max-width: 200px;
         font-size: 12px;
@@ -93,5 +97,12 @@
     .pay-btn {
         max-width: 260px;
         font-size: 12px;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .price-cart-container {
+        gap: 24px;
     }
 }
