@@ -21,3 +21,16 @@
     text-transform: uppercase;
     font-family: var(--font-family);
 }
+
+.cart-counter {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .navbar {
+        padding: 24px 40px;
+    }
+}

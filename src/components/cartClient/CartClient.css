@@ -43,6 +43,7 @@
     width: 100%;
     background: transparent;
     color: black;
+    cursor: pointer;
 }
 
 .pay-btn {

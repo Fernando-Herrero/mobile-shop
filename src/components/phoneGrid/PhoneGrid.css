@@ -6,6 +6,8 @@
     border-left: 0.5px solid black;
     border-right: 0.5px solid black;
     border-bottom: 0.5px solid black;
+    margin: 0 auto;
+    max-width: 400px;
 }
 
 .grid-border {
@@ -19,4 +21,28 @@
     font-weight: 300;
     font-size: 14px;
     line-height: 100%;
+}
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .phone-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+        border: none;
+        border-top: 0.5px solid black;
+    }
+
+    .phone-card.grid-border {
+        border-bottom: 0.5px solid black;
+        border-left: 0.5px solid black;
+        border-top: none;
+    }
+
+    .phone-card.grid-border:nth-child(even) {
+        border-right: 0.5px solid black;
+    }
+
+    .phone-card.grid-border:last-child:nth-child(odd) {
+        border-right: 0.5px solid black;
+    }
 }
