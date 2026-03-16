@@ -78,7 +78,7 @@ La interfaz está diseñada para adaptarse a diferentes tamaños de pantalla:
 
 La aplicación está desplegada en:
 
-_Próximamente_
+[ mobile-shop-nine-silk.vercel.app](https://mobile-shop-nine-silk.vercel.app)
 
 ## Instalación
 
