@@ -1,6 +1,7 @@
 import { CartItem } from "@/types/cart.types";
 import "./PhoneCardCart.css";
 import Image from "next/image";
+import { useState } from "react";
 
 interface PhoneCardCartProps {
     phone: CartItem;
@@ -8,10 +9,19 @@ interface PhoneCardCartProps {
 }
 
 export default function PhoneCardCart({ phone, onRemove }: PhoneCardCartProps) {
+    const [isRemoving, setIsRemoving] = useState(false);
+    const handleRemove = () => {
+        setIsRemoving(true);
+        setTimeout(() => {
+            onRemove(phone.id);
+        }, 300);
+    };
     const phonePrice = phone.price * (phone.quantity || 1);
 
     return (
-        <article className="phone-cart-item">
+        <article
+            className={`phone-cart-item ${isRemoving ? "exit-animation" : ""}`}
+        >
             <div className="phone-cart-img-container">
                 <Image
                     src={phone.image}
@@ -20,6 +30,7 @@ export default function PhoneCardCart({ phone, onRemove }: PhoneCardCartProps) {
                     className="phone-cart-img"
                     sizes="100px"
                     priority={false}
+                    loading="eager"
                 />
             </div>
 
@@ -46,11 +57,12 @@ export default function PhoneCardCart({ phone, onRemove }: PhoneCardCartProps) {
                     </div>
 
                     <button
-                        onClick={() => onRemove(phone.id)}
+                        onClick={handleRemove}
+                        disabled={isRemoving}
                         className="shop-text fs-10 remove-item-btn"
                         aria-label={`Eliminar ${phone.name} del carrito`}
                     >
-                        Eliminar
+                        {isRemoving ? "Eliminando..." : "Eliminar"}
                     </button>
                 </div>
             </div>

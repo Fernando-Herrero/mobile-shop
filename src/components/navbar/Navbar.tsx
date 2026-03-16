@@ -30,6 +30,7 @@ export default function Navbar() {
                     alt="Ir a inicio"
                     width={74}
                     height={24}
+                    loading="eager"
                 />
             </Link>
 

@@ -1,9 +1,9 @@
-import CartClient from "@/components/cartClient/CartClient";
+import CartPageContent from "@/components/cartPageContent/CartPageContent";
 
 export default function Cart() {
     return (
         <main className="cart-main">
-            <CartClient />
+            <CartPageContent />
         </main>
     );
 }
