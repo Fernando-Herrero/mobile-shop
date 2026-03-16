@@ -34,3 +34,10 @@
         padding: 24px 40px;
     }
 }
+
+/*DESKTOP*/
+@media (min-width: 1024px) {
+    .navbar {
+        padding: 24px 100px;
+    }
+}

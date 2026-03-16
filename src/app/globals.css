@@ -85,3 +85,10 @@ a {
         gap: 48px;
     }
 }
+
+/*DESKTOP*/
+@media (min-width: 1024px) {
+    .shop-container {
+        padding: 48px 100px;
+    }
+}

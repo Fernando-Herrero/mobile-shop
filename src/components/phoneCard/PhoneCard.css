@@ -58,12 +58,25 @@
 /*TABLET*/
 @media (min-width: 768px) {
     .phone-card-image-container.reduce-image-max .phone-image {
-        padding: 65px;
+        padding: 60px;
+    }
+}
+
+@media (min-width: 960px) {
+    .phone-card-image-container.reduce-image-max .phone-image {
+        padding: 50px;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 1024px) {
+    .phone-card-image-container.reduce-image-max .phone-image {
+        padding: 40px;
     }
     .phone-card-image-container.reduce-image-medium .phone-image {
-        padding: 55px;
+        padding: 40px;
     }
     .phone-card-image-container.reduce-image-small .phone-image {
-        padding: 30px;
+        padding: 20px;
     }
 }
