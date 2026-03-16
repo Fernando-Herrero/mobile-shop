@@ -37,7 +37,7 @@ export default function PhoneCard({ phone, variant = "grid" }: PhoneCardProps) {
                         <span className="shop-text fs-12">{phone.name}</span>
                     </div>
                     <span className="shop-text fs-12">
-                        {phone.basePrice} EUR
+                        {phone.basePrice} eur
                     </span>
                 </div>
             </article>

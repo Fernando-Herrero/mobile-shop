@@ -62,7 +62,7 @@ export default function SearchBar({ results }: SearchBarProps) {
                 )}
             </div>
 
-            <span className="shop-text fs-12">{results} RESULTS</span>
+            <span className="shop-text fs-12">{results} results</span>
         </div>
     );
 }

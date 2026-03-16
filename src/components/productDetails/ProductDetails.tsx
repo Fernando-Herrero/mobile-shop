@@ -89,14 +89,14 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     <header className="product-details-info">
                         <h1 className="shop-text fs-20">{product.name}</h1>
                         <data className="shop-text fs-14" value={displayPrice}>
-                            {displayPrice}eur
+                            {displayPrice} eur
                         </data>
                     </header>
 
                     <div className="product-storage-color">
                         <div className="product-details-selector">
                             <legend className="shop-text fs-12">
-                                storage¿how much space do you need?
+                                storage ¿how much space do you need?
                             </legend>
                             <div className="storage-options">
                                 {product.storageOptions.map((option) => (
@@ -173,23 +173,23 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             <div className="product-details-specs">
                 <h2 className="shop-text fs-20">specifications</h2>
                 <div className="specs-container">
-                    <div className="spec-container">
+                    <dl className="spec-container">
                         <dt className="shop-text fs-12">brand</dt>
                         <dd className="shop-text fs-12">{product.brand}</dd>
-                    </div>
+                    </dl>
 
-                    <div className="spec-container">
+                    <dl className="spec-container">
                         <dt className="shop-text fs-12">name</dt>
                         <dd className="shop-text fs-12">{product.name}</dd>
-                    </div>
+                    </dl>
 
                     {Object.entries(product.specs).map(([key, value]) => (
-                        <div key={key} className="spec-container">
+                        <dl key={key} className="spec-container">
                             <dt className="shop-text fs-12">{key}</dt>
                             <dd className="shop-text fs-12 second-spec">
                                 {value}
                             </dd>
-                        </div>
+                        </dl>
                     ))}
                 </div>
             </div>

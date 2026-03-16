@@ -60,19 +60,38 @@
     .phone-card.grid-border
         .phone-card-image-container.reduce-image-max
         .phone-image {
-        padding: 60px;
+        padding: 50px;
     }
 }
 
 @media (min-width: 960px) {
-    .phone-card-image-container.reduce-image-max .phone-image {
-        padding: 50px;
+    .phone-card.grid-border
+        .phone-card-image-container.reduce-image-max
+        .phone-image {
+        padding: 45px;
     }
 }
 
 /*DESKTOP*/
 @media (min-width: 1024px) {
-    .phone-card-image-container.reduce-image-max .phone-image {
+    .phone-card.grid-border
+        .phone-card-image-container.reduce-image-max
+        .phone-image {
+        padding: 50px;
+    }
+    .phone-card-image-container.reduce-image-medium .phone-image {
+        padding: 40px;
+    }
+    .phone-card-image-container.reduce-image-small .phone-image {
+        padding: 25px;
+    }
+}
+
+/*DESKTOP XL*/
+@media (min-width: 1400px) {
+    .phone-card.grid-border
+        .phone-card-image-container.reduce-image-max
+        .phone-image {
         padding: 40px;
     }
     .phone-card-image-container.reduce-image-medium .phone-image {

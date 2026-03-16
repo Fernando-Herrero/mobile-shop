@@ -25,11 +25,15 @@
 }
 
 .product-details-img.reduce-image-max img {
-    padding: 20px 20px 20px 50px;
+    padding: 40px 40px 40px 0;
 }
 
 .product-details-img.reduce-image-medium {
-    width: 70%;
+    width: 65%;
+}
+
+.product-details-img.reduce-image-medium img {
+    padding: 20px 20px 20px 50px;
 }
 
 .product-details-img.reduce-image-small {
@@ -37,7 +41,7 @@
 }
 
 .product-details-img.reduce-image-small img {
-    padding-left: 20px;
+    padding-right: 40px;
 }
 
 .product-details-img.augment-image {
@@ -45,8 +49,13 @@
     margin: -16px;
 }
 
+.product-details-img.augment-image img {
+    scale: 1.4;
+}
+
 .product-image {
     object-fit: contain;
+    scale: 1.2;
 }
 
 .image-placeholder {
@@ -280,10 +289,22 @@ grande ya que me da toc*/
     }
 
     .product-details-img {
-        /* margin-left: -35px; */
         flex: 1;
         margin-left: 0;
         max-width: 500px;
+    }
+
+    .product-details-img.reduce-image-max img {
+        padding: 20px 20px 20px 0;
+    }
+
+    .product-details-img.reduce-image-small img {
+        padding-right: 0;
+        scale: 1.2;
+    }
+
+    .product-details-img.augment-image img {
+        scale: 1.3;
     }
 
     .product-details-phone-info {
@@ -319,6 +340,15 @@ grande ya que me da toc*/
 @media (min-width: 1024px) {
     .product-details-container {
         gap: 120px;
+    }
+
+    .product-details-img.reduce-image-max img {
+        padding: 35px 35px 35px 0;
+    }
+
+    .product-details-img.reduce-image-small img {
+        padding-right: 0;
+        scale: 1;
     }
 
     .similar-scroll-container {
