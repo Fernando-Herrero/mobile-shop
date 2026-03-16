@@ -1,0 +1,103 @@
+.phone-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    padding: 16px;
+}
+
+.phone-card-article {
+    width: 100%;
+}
+
+.phone-card-info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.phone-card-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.phone-card-brand {
+    color: #79736d;
+}
+
+.phone-card-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.phone-card-image-container.reduce-image-max .phone-image {
+    padding: 50px;
+}
+.phone-card-image-container.reduce-image-medium .phone-image {
+    padding: 50px;
+}
+.phone-card-image-container.reduce-image-small .phone-image {
+    padding: 20px;
+}
+.phone-card-image-container.augment-image .phone-image {
+    padding: 0px;
+}
+
+.phone-image {
+    object-fit: contain;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .phone-card.grid-border
+        .phone-card-image-container.reduce-image-max
+        .phone-image {
+        padding: 50px;
+    }
+}
+
+@media (min-width: 960px) {
+    .phone-card.grid-border
+        .phone-card-image-container.reduce-image-max
+        .phone-image {
+        padding: 45px;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 1024px) {
+    .phone-card.grid-border
+        .phone-card-image-container.reduce-image-max
+        .phone-image {
+        padding: 50px;
+    }
+    .phone-card-image-container.reduce-image-medium .phone-image {
+        padding: 40px;
+    }
+    .phone-card-image-container.reduce-image-small .phone-image {
+        padding: 25px;
+    }
+}
+
+/*DESKTOP XL*/
+@media (min-width: 1400px) {
+    .phone-card.grid-border
+        .phone-card-image-container.reduce-image-max
+        .phone-image {
+        padding: 40px;
+    }
+    .phone-card-image-container.reduce-image-medium .phone-image {
+        padding: 40px;
+    }
+    .phone-card-image-container.reduce-image-small .phone-image {
+        padding: 20px;
+    }
+}

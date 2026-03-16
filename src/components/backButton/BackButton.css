@@ -1,0 +1,24 @@
+.product-detail-back {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .product-detail-back {
+        padding: 16px 40px;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 1024px) {
+    .product-detail-back {
+        padding: 16px 100px;
+    }
+}
