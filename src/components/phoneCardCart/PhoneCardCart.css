@@ -1,0 +1,97 @@
+.phone-cart-item {
+    display: flex;
+    padding: 16px 0;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.exit-animation {
+    opacity: 0;
+    transform: translateX(20px);
+    pointer-events: none;
+}
+
+.phone-cart-item:last-child {
+    border-bottom: none;
+}
+
+.phone-cart-img-container {
+    position: relative;
+    flex: 1;
+    height: 150px;
+    flex-shrink: 0;
+    margin: 0 -30px;
+    max-width: 300px;
+    z-index: 1;
+}
+
+.phone-cart-img {
+    object-fit: contain;
+    z-index: 1;
+}
+
+.phone-cart-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    padding: 10px 0;
+    max-width: 400px;
+}
+
+.phone-cart-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.phone-cart-specs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.phone-cart-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.price-stack {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.separator {
+    font-weight: 100;
+}
+
+.remove-item-btn {
+    background: transparent;
+    border: none;
+    align-self: flex-start;
+    text-transform: none;
+    color: #df0000;
+    cursor: pointer;
+    z-index: 20;
+    transition:
+        transform 0.1s ease,
+        filter 0.2s ease,
+        opacity 0.2s ease;
+    user-select: none;
+}
+
+.remove-item-btn:active:not(:disabled) {
+    transform: scale(0.92);
+}
+
+.remove-item-btn:disabled {
+    filter: grayscale(1);
+    opacity: 0.5;
+    cursor: not-allowed;
+}

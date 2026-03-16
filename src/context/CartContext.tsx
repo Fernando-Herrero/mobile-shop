@@ -34,8 +34,21 @@ export function CartProvider({ children }: CartProviderProps) {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
-    const addToCart = (item: CartItem) => {
-        setCart((prev) => [...prev, item]);
+    const addToCart = (newItem: CartItem) => {
+        setCart((prev) => {
+            if (!prev) return prev;
+            const existsItem = prev.find((item) => item.id === newItem.id);
+
+            if (existsItem) {
+                return prev.map((item) =>
+                    item.id === newItem.id
+                        ? { ...item, quantity: (item.quantity || 1) + 1 }
+                        : item,
+                );
+            }
+
+            return [...prev, { ...newItem, quantity: 1 }];
+        });
     };
 
     const removeFromCart = (id: string) => {
@@ -44,7 +57,10 @@ export function CartProvider({ children }: CartProviderProps) {
 
     const clearCart = () => setCart([]);
 
-    const totalItems = cart.length;
+    const totalItems = cart.reduce(
+        (acc, item) => acc + (item.quantity || 1),
+        0,
+    );
 
     return (
         <CartContext.Provider

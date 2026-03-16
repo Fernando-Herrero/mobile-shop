@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./Navbar.css";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 
 const CartCounter = dynamic(() => import("../cartCounter/CartCounter"), {
     ssr: false,
@@ -18,6 +19,9 @@ const CartCounter = dynamic(() => import("../cartCounter/CartCounter"), {
 });
 
 export default function Navbar() {
+    const pathname = usePathname();
+    const isCartPage = pathname === "/cart";
+
     return (
         <nav className="navbar">
             <Link href="/">
@@ -26,16 +30,19 @@ export default function Navbar() {
                     alt="Ir a inicio"
                     width={74}
                     height={24}
+                    loading="eager"
                 />
             </Link>
 
-            <Link
-                href="/cart"
-                aria-label="Carrito de compras"
-                className="cart-link-nav"
-            >
-                <CartCounter />
-            </Link>
+            {!isCartPage && (
+                <Link
+                    href="/cart"
+                    aria-label="Carrito de compras"
+                    className="cart-link-nav"
+                >
+                    <CartCounter />
+                </Link>
+            )}
         </nav>
     );
 }

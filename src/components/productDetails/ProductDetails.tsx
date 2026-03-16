@@ -26,17 +26,27 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     const displayPrice = selectedStorage?.price || product.basePrice;
     const displayImage =
         selectedColor?.imageUrl || product.colorOptions[0]?.imageUrl;
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleAddToCart = () => {
         if (selectedColor && selectedStorage) {
-            addToCart({
-                id: `${product.id}-${selectedColor.name}-${selectedStorage.capacity}`,
-                name: product.name,
-                image: selectedColor.imageUrl,
-                price: selectedStorage.price,
-                color: selectedColor.name,
-                storage: selectedStorage.capacity,
-            });
+            setIsLoading(true);
+            try {
+                addToCart({
+                    id: `${product.id}-${selectedColor.name}-${selectedStorage.capacity}`,
+                    name: product.name,
+                    image: selectedColor.imageUrl,
+                    price: selectedStorage.price,
+                    color: selectedColor.name,
+                    storage: selectedStorage.capacity,
+                });
+            } catch (error) {
+                console.log("Error adding phone", error);
+            } finally {
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 500);
+            }
         }
     };
 
@@ -129,16 +139,18 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     </div>
 
                     <button
-                        className={
+                        className={`shop-btn shop-text fs-12 ${
                             selectedColor && selectedStorage
-                                ? "shop-btn shop-text fs-12 add-to-cart-btn"
-                                : "shop-btn shop-text fs-12 disabled-btn"
+                                ? "add-to-cart-btn"
+                                : "disabled-btn"
+                        } ${isLoading ? "loading" : ""}`}
+                        disabled={
+                            !selectedColor || !selectedStorage || isLoading
                         }
-                        disabled={!selectedColor && !selectedStorage}
                         onClick={handleAddToCart}
                         aria-live="polite"
                     >
-                        añadir
+                        {isLoading ? "Añadiendo..." : "añadir"}
                     </button>
                 </div>
             </div>
