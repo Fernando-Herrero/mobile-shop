@@ -3,6 +3,7 @@
 import { useCartContext } from "@/context/CartContext";
 import "./CartClient.css";
 import PhoneCardCart from "@/components/phoneCardCart/PhoneCardCart";
+import Link from "next/link";
 
 export default function CartClient() {
     const { totalItems, cart, removeFromCart } = useCartContext();
@@ -40,9 +41,11 @@ export default function CartClient() {
                             </span>
                         </div>
                         <div className="btn-cart-container">
-                            <button className="shop-btn shop-text fs-10 continue-shopping-btn">
-                                continue shopping
-                            </button>
+                            <Link href="/" className="continue-shopping-link">
+                                <button className="shop-btn shop-text fs-10 continue-shopping-btn">
+                                    continue shopping
+                                </button>
+                            </Link>
                             <button className="shop-btn shop-text fs-10 pay-btn">
                                 pay
                             </button>
@@ -51,9 +54,11 @@ export default function CartClient() {
                 </div>
             ) : (
                 <div className="empty-cart-state">
-                    <button className="continue-shopping-btn">
-                        continue shopping
-                    </button>
+                    <Link href="/" className="continue-shopping-link">
+                        <button className="shop-btn shop-text fs-10 continue-shopping-btn">
+                            continue shopping
+                        </button>
+                    </Link>
                 </div>
             )}
         </div>
