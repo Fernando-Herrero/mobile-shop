@@ -57,7 +57,9 @@
 
 /*TABLET*/
 @media (min-width: 768px) {
-    .phone-card-image-container.reduce-image-max .phone-image {
+    .phone-card.grid-border
+        .phone-card-image-container.reduce-image-max
+        .phone-image {
         padding: 60px;
     }
 }

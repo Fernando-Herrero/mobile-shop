@@ -8,3 +8,17 @@
     border: none;
     cursor: pointer;
 }
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .product-detail-back {
+        padding: 16px 40px;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 1024px) {
+    .product-detail-back {
+        padding: 16px 100px;
+    }
+}
