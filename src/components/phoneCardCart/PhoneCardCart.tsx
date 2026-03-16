@@ -2,6 +2,7 @@ import { CartItem } from "@/types/cart.types";
 import "./PhoneCardCart.css";
 import Image from "next/image";
 import { useState } from "react";
+import { getImageScaleClass } from "@/utils/product.helpers";
 
 interface PhoneCardCartProps {
     phone: CartItem;
@@ -9,6 +10,7 @@ interface PhoneCardCartProps {
 }
 
 export default function PhoneCardCart({ phone, onRemove }: PhoneCardCartProps) {
+    console.log(phone);
     const [isRemoving, setIsRemoving] = useState(false);
     const handleRemove = () => {
         setIsRemoving(true);
@@ -17,12 +19,13 @@ export default function PhoneCardCart({ phone, onRemove }: PhoneCardCartProps) {
         }, 300);
     };
     const phonePrice = phone.price * (phone.quantity || 1);
+    const scaleClass = getImageScaleClass(undefined, phone.name);
 
     return (
         <article
             className={`phone-cart-item ${isRemoving ? "exit-animation" : ""}`}
         >
-            <div className="phone-cart-img-container">
+            <div className={`phone-cart-img-container ${scaleClass}`}>
                 <Image
                     src={phone.image}
                     alt={phone.name}
