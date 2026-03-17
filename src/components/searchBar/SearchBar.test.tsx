@@ -1,6 +1,5 @@
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import SearchBar from "./SearchBar";
-import { useRouter, useSearchParams } from "next/navigation";
 
 const mockPush = jest.fn();
 jest.mock("next/navigation", () => ({
