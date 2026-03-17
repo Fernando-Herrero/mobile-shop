@@ -99,13 +99,13 @@ Para ejecutar los tests con el reporte de cobertura:
 Bash
 npm test -- --coverage
 
-## Instalación
+## Despliegue y Ejecución
+
+### Instalación
 
 ```bash
 npm install
 ```
-
-## Modos de ejecución
 
 ### Desarrollo
 
