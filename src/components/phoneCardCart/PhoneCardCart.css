@@ -98,11 +98,11 @@
 }
 
 .phone-cart-img-container.reduce-image-medium .phone-cart-img {
-    padding: 24px;
+    padding: 20px;
 }
 
 .phone-cart-img-container.reduce-image-small .phone-cart-img {
-    padding: 14px;
+    padding: 6px;
 }
 
 .phone-cart-img-container.augment-image .phone-cart-img {
@@ -127,11 +127,11 @@
     }
 
     .phone-cart-img-container.reduce-image-medium .phone-cart-img {
-        padding: 35px;
+        padding: 30px;
     }
 
     .phone-cart-img-container.reduce-image-small .phone-cart-img {
-        padding: 20px;
+        padding: 8px;
     }
 
     .phone-cart-img-container.augment-image .phone-cart-img {
