@@ -319,17 +319,14 @@ grande ya que me da toc*/
         width: 100%;
     }
 
-    .similar-items-section {
+    .similar-card-wrapper {
         padding-left: 40px;
         padding-right: calc((100vw - 768px) / 2 + 40px);
-    }
-
-    .similar-card-wrapper {
         flex: 0 0 calc(100% / 2.5);
     }
 
     .similar-scroll-container::after {
-        flex: 0 0 0;
+        flex: 0 0 40px;
     }
 
     .similar-scroll-container::-webkit-scrollbar-track {
