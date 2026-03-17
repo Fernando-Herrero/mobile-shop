@@ -10,7 +10,6 @@ interface PhoneCardCartProps {
 }
 
 export default function PhoneCardCart({ phone, onRemove }: PhoneCardCartProps) {
-    console.log(phone);
     const [isRemoving, setIsRemoving] = useState(false);
     const handleRemove = () => {
         setIsRemoving(true);
