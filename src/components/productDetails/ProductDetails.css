@@ -323,10 +323,6 @@ grande ya que me da toc*/
         padding: 0 0 0px 40px;
     }
 
-    .similar-scroll-container {
-        padding-right: calc((100vw - 768px) / 2 + 40px);
-    }
-
     .similar-card-wrapper {
         flex: 0 0 calc(100% / 2.5);
     }
@@ -351,6 +347,7 @@ grande ya que me da toc*/
     .product-details-phone {
         padding: 0 100px;
     }
+
     .product-details-container {
         gap: 120px;
     }
@@ -368,21 +365,20 @@ grande ya que me da toc*/
         scale: 1;
     }
 
-    .similar-scroll-container {
-        padding-right: calc((100vw - 1200px) / 2 + 40px);
-    }
-
-    .similar-scroll-container:after {
-        flex: 0 0 0;
+    .similar-items-section {
+        padding: 0 0 0px 100px;
     }
 
     .similar-card-wrapper {
-        flex: 0 0 calc((1200px - 80px) / 4);
-        scroll-snap-align: start;
+        flex: 0 0 calc(100% / 4.5);
+    }
+
+    .similar-scroll-container::after {
+        flex: 0 0 100px;
     }
 
     .similar-scroll-container::-webkit-scrollbar-track {
-        margin-right: calc((100vw - 1200px) / 2 + 40px);
+        margin-right: 100px;
     }
 }
 
