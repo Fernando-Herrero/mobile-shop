@@ -295,7 +295,7 @@ grande ya que me da toc*/
     }
 
     .product-details-img.reduce-image-max img {
-        padding: 20px 20px 20px 0;
+        padding: 40px 40px 40px 20px;
     }
 
     .product-details-img.reduce-image-small img {
