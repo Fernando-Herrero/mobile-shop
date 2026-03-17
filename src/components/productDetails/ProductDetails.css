@@ -319,8 +319,11 @@ grande ya que me da toc*/
         width: 100%;
     }
 
+    .similar-items-section {
+        padding: 0 0 0px 40px;
+    }
+
     .similar-scroll-container {
-        padding-left: 40px;
         padding-right: calc((100vw - 768px) / 2 + 40px);
     }
 
