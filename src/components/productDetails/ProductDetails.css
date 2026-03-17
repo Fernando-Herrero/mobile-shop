@@ -320,7 +320,8 @@ grande ya que me da toc*/
     }
 
     .similar-items-section {
-        padding-left: calc((100vw - 1200px) / 2 + 40px);
+        padding-left: 40px;
+        padding-right: calc((100vw - 768px) / 2 + 40px);
     }
 
     .similar-card-wrapper {
