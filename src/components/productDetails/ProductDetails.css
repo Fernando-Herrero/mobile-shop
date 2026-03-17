@@ -319,9 +319,12 @@ grande ya que me da toc*/
         width: 100%;
     }
 
-    .similar-card-wrapper {
+    .similar-scroll-container {
         padding-left: 40px;
         padding-right: calc((100vw - 768px) / 2 + 40px);
+    }
+
+    .similar-card-wrapper {
         flex: 0 0 calc(100% / 2.5);
     }
 
