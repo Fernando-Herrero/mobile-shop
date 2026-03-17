@@ -373,7 +373,7 @@ grande ya que me da toc*/
     }
 
     .product-details-img.reduce-image-medium img {
-        padding: 50px 50px 50px 50px;
+        padding: 55px 55px 55px 55px;
     }
 
     .product-details-img.reduce-image-small img {
@@ -401,5 +401,9 @@ grande ya que me da toc*/
 @media (min-width: 1200px) {
     .product-details-img.reduce-image-max img {
         padding: 70px 70px 70px 20px;
+    }
+
+    .product-details-img.reduce-image-medium img {
+        padding: 65px 65px 65px 65px;
     }
 }
