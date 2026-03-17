@@ -377,3 +377,9 @@ grande ya que me da toc*/
         margin-right: calc((100vw - 1200px) / 2 + 40px);
     }
 }
+
+@media (min-width: 1200px) {
+    .product-details-img.reduce-image-max img {
+        padding: 70px 70px 70px 20px;
+    }
+}
