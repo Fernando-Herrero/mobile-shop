@@ -303,7 +303,7 @@ grande ya que me da toc*/
     }
 
     .product-details-img.reduce-image-medium img {
-        padding: 30px 30px 30px 30px;
+        padding: 30px;
     }
 
     .product-details-img.reduce-image-small img {
@@ -350,7 +350,7 @@ grande ya que me da toc*/
     }
 
     .product-details-img.reduce-image-medium img {
-        padding: 45px 45px 45px 45px;
+        padding: 45px;
     }
 }
 
@@ -373,7 +373,7 @@ grande ya que me da toc*/
     }
 
     .product-details-img.reduce-image-medium img {
-        padding: 55px 55px 55px 55px;
+        padding: 60px;
     }
 
     .product-details-img.reduce-image-small img {
@@ -386,7 +386,7 @@ grande ya que me da toc*/
     }
 
     .similar-card-wrapper {
-        flex: 0 0 calc(100% / 4.5);
+        flex: 0 0 calc(100% / 3.5);
     }
 
     .similar-scroll-container::after {
@@ -404,6 +404,6 @@ grande ya que me da toc*/
     }
 
     .product-details-img.reduce-image-medium img {
-        padding: 65px 65px 65px 65px;
+        padding: 80px;
     }
 }
