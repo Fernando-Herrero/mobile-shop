@@ -22,7 +22,7 @@
 .info-cart-container {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 24px;
+    padding-top: 24px;
 }
 
 .price-cart-container {
@@ -47,6 +47,7 @@
     background: transparent;
     cursor: pointer;
     display: block;
+    color: black;
 }
 
 .pay-btn {
